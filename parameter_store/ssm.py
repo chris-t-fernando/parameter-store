@@ -1,4 +1,4 @@
-from iparameter_store import IParameterStore
+from .iparameter_store import IParameterStore
 
 import boto3
 from botocore.exceptions import ClientError

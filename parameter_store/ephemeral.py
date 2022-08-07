@@ -1,4 +1,4 @@
-from iparameter_store import IParameterStore
+from .iparameter_store import IParameterStore
 
 class Ephemeral(IParameterStore):
     class exceptions:

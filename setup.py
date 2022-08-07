@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name="parameter_store",
-    version="0.1",
+    version="0.11",
     description="Interface and concretes for saving parameters for scripts",
     author="Chris Fernando",
     author_email="chris.t.fernando@gmail.com",
