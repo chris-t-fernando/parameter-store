@@ -1,5 +1,5 @@
 from .iparameter_store import IParameterStore
-
+from .exceptions import *
 import boto3
 from botocore.exceptions import ClientError
 
@@ -30,4 +30,11 @@ class S3(IParameterStore):
         except ClientError as e:
             if e.response["Error"]["Code"] == "ParameterNotFound":
                 return "[]"
+
+            if e.response["Error"]["Code"] == "NoSuchBucket":
+                raise NoSuchStoreException(e.response["Error"]["Message"])
+
+            if e.response["Error"]["Code"] == "NoSuchKey":
+                raise NoSuchKeyException(e.response["Error"]["Message"])
+
             raise
